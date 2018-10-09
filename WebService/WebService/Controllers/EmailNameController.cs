@@ -35,6 +35,11 @@ namespace WebService
             }
         }
 
+        public void StopListening()
+        {
+            listener.Close();
+        }
+
         private async Task ListenAsync()
         {
             while (true)
@@ -43,7 +48,6 @@ namespace WebService
                 Console.WriteLine("Client connected");
                 await Task.Factory.StartNew(() => ProcessRequest(context));
             }
-            listener.Close();
         }
 
         private void ProcessRequest(HttpListenerContext context)
