@@ -61,50 +61,6 @@ namespace WebService.Tests
             var getClient2data = getClient2.DownloadString(url);
 
             Assert.IsTrue(getClient2data.Contains("Found Customer: Name = John Email = john.smith@gmail.com"));
-
-            /*
-            WebRequest request = WebRequest.Create("http://localhost:8080");
-            request.Method = "POST";
-            request.q
-            request.Headers.Add("name", "John Smith");
-            request.Headers.Add("email", "john.smith@gmail.com");
-            
-            request.ContentLength = 0;
-
-            WebResponse response = request.GetResponse();
-            Stream responseStream =  response.GetResponseStream();
-            byte[] buffer = new byte[1024];
-            responseStream.Read(buffer, 0, 1023);
-
-            string responseStr = System.Text.Encoding.UTF8.GetString(buffer);
-
-            string[] postResult = response.Headers.AllKeys;
-            */
-            //Assert.AreEqual(postResult, "");
-            /*
-            Stream dataStream = request.GetRequestStream();
-            // Write the data to the request stream.
-            dataStream.Write(byteArray, 0, byteArray.Length);
-            // Close the Stream object.
-            dataStream.Close();
-            // Get the response.
-            WebResponse response = request.GetResponse();
-            // Display the status.
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
-            // Get the stream containing content returned by the server.
-            dataStream = response.GetResponseStream();
-            // Open the stream using a StreamReader for easy access.
-            StreamReader reader = new StreamReader(dataStream);
-            // Read the content.
-            string responseFromServer = reader.ReadToEnd();
-            // Display the content.
-            Console.WriteLine(responseFromServer);
-            // Clean up the streams.
-            reader.Close();
-            dataStream.Close();
-            response.Close();
-            */
-
         }
     }
 }
