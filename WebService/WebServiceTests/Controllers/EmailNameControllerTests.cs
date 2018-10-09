@@ -14,18 +14,52 @@ namespace WebService.Tests
     public class EmailNameControllerTests
     {
         [TestMethod()]
-        public void EmailNameControllerTest()
+        public void PortListeningTest()
         {
+            bool portOpenCheck1 = false;
+            bool portOpenCheck2 = false;
+
+            EmailNameController controller = new EmailNameController(8080);
+            controller.StartListening();
+
+            try
+            {
+                System.Net.Sockets.TcpClient tcp = new System.Net.Sockets.TcpClient();
+                tcp.Connect("localhost", 8080);
+                portOpenCheck1 = true;
+            }
+            catch (Exception)
+            {
+                portOpenCheck1 = false;
+            }
+
+            Assert.IsTrue(portOpenCheck1);
+
+            controller.StopListening();
+
+            try
+            {
+                System.Net.Sockets.TcpClient tcp = new System.Net.Sockets.TcpClient();
+                tcp.Connect("localhost", 8080);
+                portOpenCheck2 = true;
+            }
+            catch (Exception)
+            {
+                portOpenCheck2 = false;
+            }
+
+            Assert.IsTrue(!portOpenCheck2);
 
         }
 
         [TestMethod()]
-        public void StartListeningTest()
+        public void GetPostTest()
         {
             EmailNameController controller = new EmailNameController(8080);
             controller.StartListening();
 
             var url = "http://localhost:8080";
+
             var postClient1 = new WebClient();
             postClient1.QueryString.Add("name", "John Smith");
             postClient1.QueryString.Add("email", "john.smith@gmail.com");
@@ -61,6 +95,8 @@ namespace WebService.Tests
             var getClient2data = getClient2.DownloadString(url);
 
             Assert.IsTrue(getClient2data.Contains("Found Customer: Name = John Email = john.smith@gmail.com"));
+
+            controller.StopListening();
         }
     }
 }
