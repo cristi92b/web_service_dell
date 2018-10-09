@@ -14,6 +14,7 @@ namespace WebService
 
         private HttpListener listener;
         private Dictionary<string, string> data;
+
         public EmailNameController(long portNumber)
         {
             data = new Dictionary<string, string>();
@@ -101,18 +102,6 @@ namespace WebService
                 {
                     responseString = "Failed to update customer data customer data: Name = " + name + " Email = " + email;
                 }
-
-                /*
-                int nbEmails = data.Keys.Count(x => x.Equals(email));
-                if(nbEmails > 0) //email already exists in our dictionary
-                {
-
-                }
-                else
-                {
-
-                }
-                */
             }
             HttpListenerResponse response = context.Response;
             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseStrHeader + responseString + responseStrFooter);

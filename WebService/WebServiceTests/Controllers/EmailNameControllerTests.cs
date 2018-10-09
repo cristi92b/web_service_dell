@@ -14,13 +14,15 @@ namespace WebService.Tests
         [TestMethod()]
         public void EmailNameControllerTest()
         {
-            Assert.Fail();
+
         }
 
         [TestMethod()]
         public void StartListeningTest()
         {
-            Assert.Fail();
+            EmailNameController controller = new EmailNameController(8080);
+            controller.StartListening();
+
         }
     }
 }
