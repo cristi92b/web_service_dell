@@ -24,6 +24,7 @@ namespace WebService
 
         public void StartListening()
         {
+            bool success = true;
             try
             {
                 listener.Start();
@@ -32,7 +33,16 @@ namespace WebService
             catch (HttpListenerException hlex)
             {
                 Console.WriteLine("Exception occurred: " + hlex);
+                success = false;
             }
+            finally
+            {
+                if (success)
+                {
+                    Console.WriteLine("Successfully started service for: ( " + String.Join(" ; ", listener.Prefixes.Select(x => x)) + " )");
+                }
+            }
+
         }
 
         public void StopListening()
