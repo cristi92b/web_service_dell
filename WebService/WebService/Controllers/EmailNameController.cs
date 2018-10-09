@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebService
 {
-    class EmailNameController
+    public class EmailNameController
     {
         private readonly string responseStrHeader = "<!DOCTYPE html><html><body>";
         private readonly string responseStrFooter = "</body></html>";

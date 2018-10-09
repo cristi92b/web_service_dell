@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{BF65DE4C-FBE6-400B-B121-60A555A3C58C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceTests", "WebServiceTests\WebServiceTests.csproj", "{EDFC87B7-B739-41C6-B6E8-3523AA602284}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BF65DE4C-FBE6-400B-B121-60A555A3C58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF65DE4C-FBE6-400B-B121-60A555A3C58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF65DE4C-FBE6-400B-B121-60A555A3C58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFC87B7-B739-41C6-B6E8-3523AA602284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFC87B7-B739-41C6-B6E8-3523AA602284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFC87B7-B739-41C6-B6E8-3523AA602284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFC87B7-B739-41C6-B6E8-3523AA602284}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
